@@ -1,0 +1,11 @@
+import Admission from 0x05
+transaction(studentName: String, department: String, account: String, matNumber: Int, admssnYear: String  ) {
+    prepare(signer:AuthAccount) {}
+        execute{
+            Admission.add_studentFile(studentName:studentName,department:department,account:account,matNumber:matNumber,admssnYear:admssnYear)
+            log("student file created:")
+        
+    
+     }
+
+}
