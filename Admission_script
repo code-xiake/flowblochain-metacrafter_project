@@ -1,0 +1,7 @@
+import Admission from 0x05
+
+pub fun main (studentName:String): Admission.Registration {
+
+    return Admission.studentFile[studentName]!
+
+}
