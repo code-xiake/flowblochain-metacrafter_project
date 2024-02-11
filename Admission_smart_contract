@@ -1,0 +1,29 @@
+pub contract Admission {
+
+    pub struct Registration {
+        pub let studentName: String
+        pub let department: String
+        pub let account: String
+        pub let matNumber: Int
+        pub let admssnYear: String
+
+        init(_studentName: String, _department: String, _account: String, _matNumber: Int, _admssnYear: String) {
+            self.studentName = _studentName
+            self.department = _department 
+            self.account = _account
+            self.matNumber = _matNumber
+            self.admssnYear = _admssnYear
+        }
+    }
+
+    pub var studentFile: {String: Registration}
+
+    pub fun add_studentFile(studentName: String, department: String, account: String, matNumber: Int, admssnYear: String) {
+        let new_studentFile = Registration(_studentName: studentName, _department: department, _account: account, _matNumber: matNumber, _admssnYear: admssnYear)
+        self.studentFile[studentName] = new_studentFile
+    }
+
+    init() {
+        self.studentFile = {}
+    }
+}
